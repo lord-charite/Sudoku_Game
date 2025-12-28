@@ -22,6 +22,16 @@ int main(void) {
   readgame(grid);
   displayBoard(grid);
   getInputs(grid, &mistakes); //get inputs from user and display current board if input is valid
+
+  if (puzzleSolved(grid)) {
+        printf("Puzzle Solved!\n");
+    } else {
+        printf("Puzzle Not Solved.\n");
+    }
+
+    writeGame(grid, &mistakes);
+    return exitGame(grid, &mistakes);
+
   
 }
 
@@ -352,3 +362,4 @@ void green (){
 void reset () {
   printf("\033[0m");
 }
+
